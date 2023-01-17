@@ -1,0 +1,10 @@
+- name: Apache playbook
+  hosts: myservers
+  become: true
+  tasks:
+    - name: Uninstalling the apache server
+      apt:
+        name: apache2
+        state: absent
+        autoclean: true
+        autoremove: true
